@@ -4,35 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CheckBoxActivity">
+    android:orientation="vertical"
+    tools:context=".CheckBoxActivity" >
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/pizza_check_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        tools:layout_editor_absoluteX="118dp" />
+        android:layout_marginTop="116dp"
+        android:text="Pizza"
+        android:textColor="#2E2929"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/coffee_check_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox3"
-        app:layout_constraintEnd_toEndOf="@+id/checkBox"
-        app:layout_constraintStart_toStartOf="@+id/checkBox"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Coffee"
+        android:textColor="#2E2929"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/pizza_check_box"
+        app:layout_constraintStart_toStartOf="@+id/pizza_check_box"
+        app:layout_constraintTop_toBottomOf="@+id/pizza_check_box" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/burger_check_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="360dp"
-        android:text="CheckBox"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/checkBox2"
-        app:layout_constraintStart_toStartOf="@+id/checkBox2"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+        android:layout_marginTop="8dp"
+        android:text="Burger"
+        android:textColor="#2E2929"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/coffee_check_box"
+        app:layout_constraintStart_toStartOf="@+id/coffee_check_box"
+        app:layout_constraintTop_toBottomOf="@+id/coffee_check_box" />
+
+    <Button
+        android:id="@+id/order_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:text="ORDER"
+        app:layout_constraintEnd_toEndOf="@+id/coffee_check_box"
+        app:layout_constraintStart_toStartOf="@+id/coffee_check_box"
+        app:layout_constraintTop_toBottomOf="@+id/burger_check_box" />
 </androidx.constraintlayout.widget.ConstraintLayout>
