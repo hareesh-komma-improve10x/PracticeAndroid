@@ -12,8 +12,6 @@ import com.improve10x.practiceandroid.databinding.ActivityRatingBarBinding;
 public class RatingBarActivity extends AppCompatActivity {
 
     ActivityRatingBarBinding binding;
-    RatingBar ratingBarRb;
-    Button submitBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
