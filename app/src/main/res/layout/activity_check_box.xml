@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CheckBoxActivity" >
+    tools:context=".CheckBoxActivity">
 
     <CheckBox
         android:id="@+id/pizza_check_box"
@@ -24,7 +24,6 @@
         android:id="@+id/coffee_check_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Coffee"
         android:textColor="#2E2929"
@@ -49,9 +48,21 @@
         android:id="@+id/order_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="150dp"
         android:text="ORDER"
         app:layout_constraintEnd_toEndOf="@+id/coffee_check_box"
         app:layout_constraintStart_toStartOf="@+id/coffee_check_box"
         app:layout_constraintTop_toBottomOf="@+id/burger_check_box" />
+
+    <TextView
+        android:id="@+id/order_details_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="TextView"
+        android:textColor="#3A3131"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/order_btn"
+        tools:layout_editor_absoluteX="177dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

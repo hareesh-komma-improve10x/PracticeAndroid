@@ -24,23 +24,32 @@ public class CheckBoxActivity extends AppCompatActivity {
 
     private void handleButton() {
         binding.orderBtn.setOnClickListener(view -> {
-            int totalAmount = 0;
-            StringBuilder result = new StringBuilder();
-            result.append("Selected Items:");
-            if (binding.pizzaCheckBox.isChecked()) {
-                result.append("\t Pizza 200 Rs");
-                totalAmount+= 200;
-            }
-            if (binding.coffeeCheckBox.isChecked()) {
-                result.append("\t Coffee 25 Rs");
-                totalAmount+= 25;
-            }
-            if (binding.burgerCheckBox.isChecked()) {
-                result.append("\t Burger 150 Rs");
-                totalAmount+= 150;
-            }
-            result.append("\t Total : " + totalAmount + "Rs");
-            Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+            // get selected items
+            boolean pizza = binding.pizzaCheckBox.isChecked();
+            boolean coffee = binding.coffeeCheckBox.isChecked();
+            boolean burger = binding.burgerCheckBox.isChecked();
+            String orderDetails = createOrder(pizza, coffee, burger);
+            // displaying the message and total amount
+            binding.orderDetailsTxt.setText(orderDetails);
         });
+    }
+
+    private String createOrder(boolean pizza, boolean coffee, boolean burger) {
+        int totalAmount = 0;
+        String orderDetails = "Selected Items";
+        if (pizza) {
+            totalAmount += 100;
+            orderDetails += "\npizza : 100Rs";
+        }
+        if (coffee) {
+            totalAmount += 50;
+            orderDetails += "\ncoffee : 50Rs";
+        }
+        if (burger) {
+            totalAmount += 120;
+            orderDetails += "\nburger : 120";
+        }
+        orderDetails += "\nTotal : Rs." + totalAmount;
+        return orderDetails;
     }
 }
