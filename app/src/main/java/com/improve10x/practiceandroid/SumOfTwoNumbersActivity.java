@@ -8,39 +8,37 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.improve10x.practiceandroid.databinding.ActivitySumOfTwoNumbersBinding;
+
 public class SumOfTwoNumbersActivity extends AppCompatActivity {
 
-    private EditText firstTxt;
-    private EditText secondTxt;
-    private Button addBtn;
+    ActivitySumOfTwoNumbersBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sum_of_two_numbers);
+        binding = ActivitySumOfTwoNumbersBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         getSupportActionBar().setTitle("Sum of two number");
-        handleButton();
-        setupViews();
+        handleSumOfTwoNumbers();
 
     }
 
-    private void setupViews() {
-        firstTxt = findViewById(R.id.first_txt);
-        secondTxt = findViewById(R.id.second_txt);
-        addBtn = findViewById(R.id.add_btn);
-    }
-
-    private void handleButton() {
-        Button addBtn = findViewById(R.id.add_btn);
-        addBtn.setOnClickListener(view -> {
-            String first = firstTxt.getText().toString();
-            String second = secondTxt.getText().toString();
-            int a = Integer.parseInt(first);
-            int b = Integer.parseInt(second);
-            int sum = a + b;
+    private void handleSumOfTwoNumbers() {
+        binding.addBtn.setOnClickListener(view -> {
+            // read a and b
+            String first = binding.firstTxt.getText().toString();
+            String second = binding.secondTxt.getText().toString();
+            // convert to it int
+            String sum = add(first, second);
             Toast.makeText(this, String.valueOf(sum), Toast.LENGTH_SHORT).show();
         });
     }
-
-
+    // Business logic - only main operations.Strictly no ui changes
+    private String add(String first, String second) {
+        int number1 = Integer.parseInt(first);
+        int number2 = Integer.parseInt(second);
+        int sum = number1 + number2;
+        return String.valueOf(sum);
+    }
 }

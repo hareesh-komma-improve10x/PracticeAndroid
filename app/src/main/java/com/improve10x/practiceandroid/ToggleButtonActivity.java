@@ -7,34 +7,27 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.improve10x.practiceandroid.databinding.ActivityToggleButtonBinding;
+
 public class ToggleButtonActivity extends AppCompatActivity {
 
-    private Button submitBtn;
-    private ToggleButton button1Btn;
-    private ToggleButton button2Btn;
-
+    ActivityToggleButtonBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_toggle_button);
+        binding  = ActivityToggleButtonBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         getSupportActionBar().setTitle("ToggleButton");
-        setupViews();
         handleButton();
     }
 
     private void handleButton() {
-        submitBtn.setOnClickListener(view -> {
+        binding.submitBtn.setOnClickListener(view -> {
             StringBuilder result = new StringBuilder();
-            result.append("button1Btn: ").append(button1Btn.getText());
-            result.append("button2Btn: ").append(button2Btn.getText());
+            result.append("button1Btn: ").append(binding.button1Btn.getText());
+            result.append("button2Btn: ").append(binding.button2Btn.getText());
             Toast.makeText(this, result.toString(), Toast.LENGTH_SHORT).show();
         });
-    }
-
-    private void setupViews() {
-        submitBtn = findViewById(R.id.submit_btn);
-        button1Btn = findViewById(R.id.button1_btn);
-        button2Btn = findViewById(R.id.button2_btn);
     }
 }
