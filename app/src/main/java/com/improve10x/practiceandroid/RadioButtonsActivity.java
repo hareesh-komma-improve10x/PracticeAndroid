@@ -20,17 +20,26 @@ public class RadioButtonsActivity extends AppCompatActivity {
         binding = ActivityRadioButtonsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().setTitle("Radio Buttons");
-        handleButton();
+        handleShowButton();
     }
 
-    private void handleButton() {
+    private void handleShowButton() {
         binding.selectBtn.setOnClickListener(view -> {
-            if(binding.maleRadio.isChecked()) {
-                Toast.makeText(this, "Male", Toast.LENGTH_LONG).show();
-            }
-            if (binding.femaleRadio.isChecked()) {
-                Toast.makeText(this, "Female", Toast.LENGTH_LONG).show();
-            }
+            boolean male = binding.maleRadio.isChecked();
+            boolean female = binding.femaleRadio.isChecked();
+            String selectedItems = gender (male, female);
+            Toast.makeText(this, selectedItems, Toast.LENGTH_SHORT).show();
         });
+    }
+
+    private String gender(boolean male, boolean female) {
+        String result = "Selected Gender : ";
+        if (male) {
+            result += "Male";
+        }
+        if (female) {
+            result += "Female";
+        }
+        return result;
     }
 }
