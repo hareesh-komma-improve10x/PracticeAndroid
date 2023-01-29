@@ -41,6 +41,7 @@ public class SpinnerActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
     }
