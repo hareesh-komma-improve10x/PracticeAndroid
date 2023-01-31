@@ -25,6 +25,5 @@ public class AutoCompleteTextViewActivity extends AppCompatActivity {
         search.setThreshold(1);
         search.setAdapter(adapter);
         search.setTextColor(Color.BLACK);
-
     }
 }
