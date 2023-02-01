@@ -26,14 +26,14 @@ public class CustomListViewActivity extends AppCompatActivity {
     }
 
     private void customListView() {
-        customListViewAdapter = new CustomListViewAdapter(this, R.layout.activity_custom_list_view, listsLv);
+        customListViewAdapter = new CustomListViewAdapter(this, R.layout.custom_list_item, listsLv);
         binding.customListLv.setAdapter(customListViewAdapter);
     }
 
     private void setData() {
         listsLv = new ArrayList<>();
         CustomList title = new CustomList();
-        title.imageUrl = "https://pluspng.com/img-png/instagram-logo-eps-png-instagram-logo-1784.png";
+        title.imageUrl = "https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-96.png";
         title.title = "PsPk";
         title.subTitle = "Dialog";
         listsLv.add(title);

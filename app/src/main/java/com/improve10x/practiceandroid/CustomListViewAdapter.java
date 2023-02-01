@@ -28,6 +28,7 @@ public class CustomListViewAdapter extends ArrayAdapter<CustomList> {
         binding = CustomListItemBinding.inflate(LayoutInflater.from(getContext()), parent, false);
         CustomList customList = getItem(position);
         Picasso.get().load(customList.imageUrl).into(binding.imageImg);
+        //binding.imageImg.setImageResource(R.drawable.ic_baseline_tag_faces_24);
         binding.titleTxt.setText(customList.title);
         binding.subTitleTxt.setText(customList.subTitle);
         return binding.getRoot();
